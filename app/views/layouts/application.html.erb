@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bug Brother Brazil</title>
+		<%= stylesheet_link_tag "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div class="main-bg">
+			<div class="bg">
+				<!--==============================header=================================-->
+				<header>
+					<div class="main">
+						<div class="wrapper">
+							<h1><%= link_to 'Bug Brother Brazil', home_path %></h1>
+						</div>
+						<div class="login">
+							Login ainda não implementado
+							<%# render 'home/login' %>
+						</div>
+						<nav>
+							<%= render 'home/menu' %>
+						</nav>
+					</div>
+				</header>
+				<!--==============================content================================-->
+				<section id="content"><div class="ic"></div>
+					<div class="main">
+						<div class="container_12">
+							<div class="container-bot">
+								<div class="container-top">
+									<div class="container">
+										<div class="wrapper">
+											<p class="notice"><%= notice %></p>
+											<p class="alert"><%= alert %></p>
+											<%= yield %>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!--==============================footer=================================-->
+				<footer>
+		        <div class="main">
+		            <sub>Hosted by Heroku | Technology Ruby on Rails<br />Developed by Diogo de Lima<br />
+		            <span>Bug Brother Brazil &copy; 2013</span></sub>
+		        </div>
+				</footer>
+			</div>
+		</div>
+		<script type="text/javascript"> Cufon.now(); </script
+	</body>
+</html>
