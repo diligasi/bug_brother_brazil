@@ -1,9 +1,18 @@
 BugBrotherBrazil::Application.routes.draw do
 
-  devise_for :users
+  resources :cameras
+
+  # Configuring Devise's routes
+  devise_for :users, :path => "", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => '', :sign_up => 'register' }
+ 
+  # Resource for user's CRUD
+  # scope "/admin" do
+  #   resources :users
+  # end
 
   match '/' => "home#index", :as => :home
   match '/about' => "about#index", :as => :about
+  match "/cameras" => "cameras#index", :as => :cameras
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

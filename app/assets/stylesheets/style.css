@@ -289,7 +289,7 @@ h6 {color:#fff; font-weight:normal; margin-bottom:3px;}
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 }
-.button:hover {background:#fb4400; color:#fff;}
+.button:hover {background:#7a8b34; color:#fff;}
 
 .list-1 li {
 	line-height:18px; 
@@ -425,7 +425,7 @@ dl.main-address span {float:left; width:74px; color:#fff;}
 	display:block; 
 	font-size:13px;
 	line-height:26px;
-	width:70px; 
+	width:135px;		/* Alterado por Diogo */
 	color:#7f7f7f;
 	font-family:Arial, Helvetica, sans-serif;
 }
