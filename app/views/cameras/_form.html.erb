@@ -1,29 +1,30 @@
 <%= form_for(@camera) do |f| %>
-  <% if @camera.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@camera.errors.count, "error") %> prohibited this camera from being saved:</h2>
+  <fieldset>
+    <% if @camera.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@camera.errors.count, "error") %> prohibited this camera from being saved:</h2>
 
-      <ul>
-      <% @camera.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @camera.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.label :name, :class => 'text-form' %>
+    <%= f.text_field :name, :autofocus => true %><br />
+
+    <%= f.label :address, :class => 'text-form' %>
+    <%= f.text_field :address %><br />
+
+    <%= f.label :description, :class => 'text-form' %>
+    <%= f.text_area :description, :onKeyDown => 'countChar(this, 250)', :onKeyUp => 'countChar(this, 250)' %><br />
+
+    <div class="max-size"><font size="1">Characters left: <var id="charNum">250</var.</font></div>
+
+    <div class="buttons" style="padding:  40px 200px 0 0;">
+      <%= f.submit %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </fieldset>
 <% end %>

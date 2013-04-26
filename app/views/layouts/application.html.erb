@@ -5,6 +5,18 @@
 		<%= stylesheet_link_tag "application", :media => "all" %>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
+		<script language="javascript" type="text/javascript">
+			function countChar(val, max) {
+		        var len = val.value.length;
+		        if (len === max) {
+		        	$('#charNum').text(0);
+		        } else if (len < max) {
+		        	$('#charNum').text(max - len);
+		        } else {
+		        	val.value = val.value.substring(0, max);
+		        }
+		      };
+		</script>
 	</head>
 	<body>
 		<div class="main-bg">
@@ -13,7 +25,7 @@
 				<header>
 					<div class="main">
 						<div class="wrapper">
-							<h1><%= link_to 'Bug Brother Brazil', home_path %></h1>
+							<h1><%= link_to 'Bug Brother Brazil', root_path %></h1>
 						</div>
 						<div class="login">
 							<%= render 'home/login' %>
@@ -21,6 +33,9 @@
 						<nav>
 							<%= render 'home/menu' %>
 						</nav>
+						<% if current_page?('/') %>
+							<%= render 'home/camera_panel' %>
+						<% end %>
 					</div>
 				</header>
 				<!--==============================content================================-->
@@ -44,7 +59,7 @@
 				<!--==============================footer=================================-->
 				<footer>
 		        <div class="main">
-		            <sub>Hosted by Heroku | Technology Ruby on Rails<br />Developed by Diogo de Lima<br />
+		            <sub>Hosted by <%= link_to 'Heroku', 'https://www.heroku.com/', :style => 'color: #666;' %> | Technology Ruby on Rails<br />Developed by Diogo de Lima<br />
 		            <span>Bug Brother Brazil &copy; 2013</span></sub>
 		        </div>
 				</footer>

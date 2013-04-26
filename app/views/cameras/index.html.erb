@@ -1,27 +1,42 @@
-<h1>Listing cameras</h1>
+<article class="grid_12">
+  <div class="indent-left2">
+    <h3 class="p1">Listing cameras</h3>
+    <table class="camera-table">
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Description</th>
+        <th class="options"></th>
+        <th class="options"></th>
+        <th class="options"></th>
+      </tr>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <% if Camera.count != 0 %>
 
-<% @cameras.each do |camera| %>
-  <tr>
-    <td><%= camera.name %></td>
-    <td><%= camera.address %></td>
-    <td><%= camera.description %></td>
-    <td><%= link_to 'Show', camera %></td>
-    <td><%= link_to 'Edit', edit_camera_path(camera) %></td>
-    <td><%= link_to 'Destroy', camera, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+      <% @cameras.each do |camera| %>
+        <tr>
+          <td><%= camera.name %></td>
+          <td><%= camera.address %></td>
+          <td><%= camera.description %></td>
+          <td><%= link_to 'Show', camera %></td>
+          <td><%= link_to 'Edit', edit_camera_path(camera) %></td>
+          <td><%= link_to 'Destroy', camera, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% else %>
+        <tr>
+          <td>-------</td>
+          <td>No registred camera</td>
+          <td>-------</td>
+          <td><%= link_to 'Show', nil, :onclick => 'alert("No camera to show, please add one pressin the \"New Camera\" link."); return false;' %></td>
+          <td><%= link_to 'Edit', nil, :onclick => 'alert("No camera to edit, please add one pressin the \"New Camera\" link."); return false;' %></td>
+          <td><%= link_to 'Destroy', nil, :onclick => 'alert("No camera to destroy, please add one pressin the \"New Camera\" link."); return false;' %></td>
+        </tr>
+    <% end %>
+    </table>
 
-<br />
+    <br />
 
-<%= link_to 'New Camera', new_camera_path %>
+    <%= link_to 'New Camera', new_camera_path %>
+  </div>
+</article>

@@ -10,7 +10,6 @@ BugBrotherBrazil::Application.routes.draw do
   #   resources :users
   # end
 
-  match '/' => "home#index", :as => :home
   match '/about' => "about#index", :as => :about
   match "/cameras" => "cameras#index", :as => :cameras
 

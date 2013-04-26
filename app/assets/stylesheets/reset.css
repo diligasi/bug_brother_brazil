@@ -35,8 +35,8 @@ blockquote, q {
 }
 table, table td { 
 	padding:0;
-	border:none;
-	border-collapse:collapse;
+	/*border:none;
+	border-collapse:collapse;*/
 }
 img {
 	vertical-align:top; 

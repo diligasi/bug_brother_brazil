@@ -1,6 +1,6 @@
 <article class="grid_8">
   <div class="indent-left">
-    <h3 class="p1">Sign up</h3>
+    <h3 class="p1">Register</h3>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
@@ -18,7 +18,7 @@
         <%= f.password_field :password_confirmation %><br />
 
         <div class="buttons" style="padding: 20px 240px 0 0;">
-          <%= f.submit "Sign up", :class => 'button', :style => 'width: 90px;' %>
+          <%= f.submit "Register", :class => 'button', :style => 'width: 90px;' %>
         </div>
       </fieldset>
     <% end %>
